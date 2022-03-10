@@ -13,7 +13,7 @@ Game requirements:
 #### Make a board
 * To create a list to store the tokens on the board.
 * With this assumption in place, the only valid position to place token are range(0,9)
-    * note the range is inclusive of indices 0 and 9.
+    * note the range is inclusive of indices 0 but not 9.
 * Finally, We need to generate a figure for the board
 
 
@@ -26,7 +26,7 @@ Game requirements:
 * In order to make the game fair, a random number we be used to determine the first player
  * Best of 2 of 3 attempts, in a random guessing game will determine the winner
  * Players guess a number with a small range 
- * the closest player within a range of +/- 10 to the random number wins the round
+ * the closest player within a range of +/- 3 to the random number wins the round
  
 #### Place Player Tokens on the board
 * Prompt each player for a index to place their token on the board
@@ -35,7 +35,7 @@ Game requirements:
 * Edge Cases:
     * If the provided index is occupied, prompt the current player for another location to place their token.
     * If the provided index is out of bound, prompt current player for another location.
-        * Valid bound is 0 <= index <= 9
+        * Valid bound is 0 <= index < 9
     * Else
         * Add player turn on that location
      
